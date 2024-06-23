@@ -1,9 +1,14 @@
 require('dotenv').config();
 const express = require('express');
+const helmet = require('helmet');
 const { NseIndia } = require('stock-nse-india');
 const app = express();
 const port = process.env.PORT || 3000;
 const API_KEY = process.env.API_KEY;
+
+// Apply security middlewares
+app.use(helmet());
+app.use(express.json()); 
 
 // Middleware for Bearer authentication
 const authenticate = (req, res, next) => {
