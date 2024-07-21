@@ -1,2 +1,2 @@
 # stock-server
-Scrape data from NSE
+Stock screener
